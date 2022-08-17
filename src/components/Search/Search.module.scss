@@ -1,0 +1,16 @@
+@import '../../styles/vars.scss';
+
+.search {
+    width: 100%;
+    min-height: 25vh;
+    padding-top: 25px;
+    background: $main-pink;
+    background: linear-gradient(90deg, $main-pink 0%, $main-purple 100%);
+    .holder {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 25px;
+    }
+}

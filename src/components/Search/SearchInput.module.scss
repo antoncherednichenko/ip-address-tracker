@@ -1,0 +1,24 @@
+@import '../../styles/vars.scss';
+
+.search {
+    width: 100%;
+    max-width: 450px;
+    background: #fff;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    &__root {
+        width: 100%;
+        max-width: 415px;
+        padding: 10px;
+    }
+    &__btn {
+        background: $dark-grey;
+        height: 52px;
+        width: 52px;
+        border: none;
+        cursor: pointer;
+    }
+}

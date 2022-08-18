@@ -14,24 +14,27 @@ const Search = () => {
     const [searchValue, setSearchValue] = useState<string>('')
 
     const changeSearchValue = (value: string) => { setSearchValue(value) }
+    const searchHandler = () => { console.log(searchValue) }
 
     return (
-        <>
-            <section className={s.search}>
-                <Container maxWidth="xl">
-                    <Typography
-                        align="center"
-                        variant="h1"
-                        sx={titleStyles}
-                    >
-                        IP Address Tracker
-                    </Typography>
-                    <div className={s.holder}>
-                        <SearchInput searchValue={searchValue} changeSearchValue={changeSearchValue} />
-                    </div>
-                </Container>
-            </section>
-        </>
+        <section className={s.search}>
+            <Container maxWidth="xl">
+                <Typography
+                    align="center"
+                    variant="h1"
+                    sx={titleStyles}
+                >
+                    IP Address Tracker
+                </Typography>
+                <div className={s.holder}>
+                    <SearchInput 
+                        searchValue={searchValue} 
+                        changeSearchValue={changeSearchValue}
+                        searchHandler={searchHandler} 
+                    />
+                </div>
+            </Container>
+        </section>
     )
 }
 

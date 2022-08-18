@@ -1,7 +1,10 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 
+import searchSlice from './slices/searchSlice';
+
 export const store = configureStore({
   reducer: {
+    search: searchSlice
   },
 });
 

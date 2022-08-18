@@ -1,5 +1,7 @@
 import { Container, Typography } from '@mui/material'
 import { useState } from 'react'
+import { useAppDispatch, useAppSelector } from '../../hooks'
+import { searchAction } from '../../store/actionCreaters/asyncActionCreators'
 import s from './Search.module.scss'
 import SearchInput from './SearchInput'
 
@@ -12,9 +14,14 @@ const titleStyles = {
 const Search = () => {
 
     const [searchValue, setSearchValue] = useState<string>('')
+    const dispatch = useAppDispatch()
 
     const changeSearchValue = (value: string) => { setSearchValue(value) }
-    const searchHandler = () => { console.log(searchValue) }
+    const searchHandler = () => {
+        if(searchValue) {
+            dispatch(searchAction(searchValue))
+        }
+    }
 
     return (
         <section className={s.search}>

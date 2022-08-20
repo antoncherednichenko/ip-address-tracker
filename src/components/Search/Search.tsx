@@ -1,6 +1,6 @@
 import { Container, Typography } from '@mui/material'
 import { useState } from 'react'
-import { useAppDispatch, useAppSelector } from '../../hooks'
+import { useAppDispatch } from '../../hooks'
 import { searchAction } from '../../store/actionCreaters/asyncActionCreators'
 import s from './Search.module.scss'
 import SearchInput from './SearchInput'

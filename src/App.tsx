@@ -4,6 +4,7 @@ import Search from './components/Search/Search';
 
 import s from './App.module.scss'
 import { useAppSelector } from './hooks';
+import SearchResult from './components/SearchResult/SearchResult';
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
 	return (
 		<div className={s.app}>
 			<Search />
+			<SearchResult />
 			<AppMap
 				markerPosition={markerPosition} 
 			/>

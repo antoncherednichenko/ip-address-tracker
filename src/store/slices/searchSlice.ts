@@ -4,7 +4,8 @@ import { searchAction } from "../actionCreaters/asyncActionCreators";
 
 
 const initialState: ISearchState = {
-    searchResult: null
+    searchResult: null,
+    isLoading: false
 }
 
 const searchSlice = createSlice({
@@ -12,9 +13,12 @@ const searchSlice = createSlice({
     initialState,
     reducers: {},
     extraReducers: builder => {
+        builder.addCase(searchAction.pending, state => { state.isLoading = true })
         builder.addCase(searchAction.fulfilled, (state, { payload }) => {
             state.searchResult = payload
+            state.isLoading = false
         })
+        builder.addCase(searchAction.rejected, state => { state.isLoading = false })
     }
 })
 

@@ -1,12 +1,12 @@
 export interface ILocation {
-    country: string
-    region: string
-    city: string
-    lat: number
-    lng: number
-    postalCode: string
-    timezone: string
-    geonameId: number
+    country?: string
+    region?: string
+    city?: string
+    lat?: number
+    lng?: number
+    postalCode?: string
+    timezone?: string
+    geonameId?: number
 }
 
 export interface IAs {
@@ -36,4 +36,5 @@ export interface ISearchResult {
 
 export interface ISearchState {
     searchResult: ISearchResult | null
+    isLoading: boolean
 }

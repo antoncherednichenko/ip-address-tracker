@@ -1,13 +1,16 @@
 import { Card, List, ListItem, Typography } from '@mui/material'
 import { useAppSelector } from '../../../hooks'
+import { ILocation } from '../../../types/searchSliceTypes'
 
 import s from './ResultCard.module.scss'
 
-const ResultCard = () => {
+interface IResultCardProps {
+    ip?: string
+    isp?: string
+    location?: ILocation
+}
 
-    const ip = useAppSelector(state => state.search.searchResult?.ip)
-    const isp = useAppSelector(state => state.search.searchResult?.isp)
-    const location = useAppSelector(state => state.search.searchResult?.location)
+const ResultCard = ({ ip, isp, location }: IResultCardProps) => {
 
     return (
         <Card sx={{ width: '100%', maxWidth: '950px', margin: '0 auto' }}>
@@ -30,9 +33,9 @@ const ResultCard = () => {
                     <Typography sx={{fontWeight: 'bold'}} variant="body1">
                         {location ? (
                             <>
-                                {location?.country}
-                                {location?.city}
-                                {location?.postalCode}
+                                {location?.country ? <span>{location.country}, </span> : ''}
+                                {location?.city ? <span>{location.city}, </span> : ''}
+                                {location?.postalCode ? <span>{location.postalCode}</span> : ''}
                             </>
                         ) : '-'}
                     </Typography>

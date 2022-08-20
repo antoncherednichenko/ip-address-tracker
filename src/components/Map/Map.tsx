@@ -13,13 +13,13 @@ interface IMapProps {
     markerPosition: number[]
 }
 
-const AppMap = ({ markerPosition =[] }: IMapProps) => {
+const AppMap = ({ markerPosition = [] }: IMapProps) => {
 
     
     const [mapState, setMapState] = useState<IdefaultMapSate>({ center: [55.75, 37.57], zoom: 10 })
 
     useEffect(() => {
-        setMapState({ ...mapState, center: markerPosition })
+        setMapState({ zoom: 10, center: markerPosition })
     }, [markerPosition])
 
     
